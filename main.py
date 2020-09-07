@@ -155,30 +155,21 @@ class Board(Canvas):
 
     def onKeyPressed(self, e):
         '''controls direction variables with cursor keys'''
-
-        key = e.keysym
-
+        key = e.keysym    # Get the key variable value from parameter e
         LEFT_CURSOR_KEY = "Left"
         if key == LEFT_CURSOR_KEY and self.moveX <= 0:
-
             self.moveX = -Cons.DOT_SIZE
             self.moveY = 0
-
         RIGHT_CURSOR_KEY = "Right"
         if key == RIGHT_CURSOR_KEY and self.moveX >= 0:
-
             self.moveX = Cons.DOT_SIZE
             self.moveY = 0
-
-        RIGHT_CURSOR_KEY = "Up"
-        if key == RIGHT_CURSOR_KEY and self.moveY <= 0:
-
+        UP_CURSOR_KEY = "Up"
+        if key == UP_CURSOR_KEY and self.moveY <= 0:
             self.moveX = 0
             self.moveY = -Cons.DOT_SIZE
-
         DOWN_CURSOR_KEY = "Down"
         if key == DOWN_CURSOR_KEY and self.moveY >= 0:
-
             self.moveX = 0
             self.moveY = Cons.DOT_SIZE
 
