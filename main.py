@@ -5,14 +5,13 @@ from tkinter import Tk, Frame, Canvas, ALL, NW
 
 class Cons:
 
-    BOARD_WIDTH = 750
-    BOARD_HEIGHT = 550
-    DELAY = 175
-    DOT_SIZE = 10
-    MAX_RAND_POS = 27
+    BOARD_WIDTH = 700
+    BOARD_HEIGHT = 500
+    DELAY = 165
+    DOT_SIZE = 12
+    MAX_RAND_POS = 32
 
 class Board(Canvas):
-
     def __init__(self):
         super().__init__(width=Cons.BOARD_WIDTH, height=Cons.BOARD_HEIGHT,
             background="black", highlightthickness=0)
@@ -28,14 +27,13 @@ class Board(Canvas):
         self.moveX = Cons.DOT_SIZE
         self.moveY = 0
         # starting apple coordinates
-        self.appleX = 175
-        self.appleY = 325
+        self.appleX = 200
+        self.appleY = 350
         self.loadImages()
         self.createObjects()
         self.locateApple()
         self.bind_all("<Key>", self.onKeyPressed)
         self.after(Cons.DELAY, self.onTimer)
-
 
     def loadImages(self):
         '''loads images from the disk'''
@@ -49,7 +47,6 @@ class Board(Canvas):
         except IOError as e:
             print(e)
             sys.exit(1)
-
 
     def createObjects(self):
         '''creates objects on Canvas'''
@@ -109,10 +106,10 @@ class Board(Canvas):
         '''places the apple object on Canvas'''
         apple = self.find_withtag("apple")
         self.delete(apple[0])
-        r = random.randint(0, Cons.MAX_RAND_POS)
-        self.appleX = r * Cons.DOT_SIZE
-        r = random.randint(0, Cons.MAX_RAND_POS)
-        self.appleY = r * Cons.DOT_SIZE
+        rX = random.randint(30, Cons.MAX_RAND_POS-30)
+        rY = random.randint(30, Cons.MAX_RAND_POS-30)
+        self.appleX = rX * Cons.DOT_SIZE
+        self.appleY = rY * Cons.DOT_SIZE
         self.create_image(self.appleX, self.appleY, anchor=NW,
             image=self.apple, tag="apple")
 
