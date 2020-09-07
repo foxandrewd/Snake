@@ -16,28 +16,21 @@ class Board(Canvas):
     def __init__(self):
         super().__init__(width=Cons.BOARD_WIDTH, height=Cons.BOARD_HEIGHT,
             background="black", highlightthickness=0)
-
         self.initGame()
         self.pack()
 
-
     def initGame(self):
         '''initializes game'''
-
         self.inGame = True
-        self.dots = 3
+        self.dots = 4
         self.score = 0
-
         # variables used to move snake object
         self.moveX = Cons.DOT_SIZE
         self.moveY = 0
-
         # starting apple coordinates
-        self.appleX = 100
-        self.appleY = 190
-
+        self.appleX = 175
+        self.appleY = 325
         self.loadImages()
-
         self.createObjects()
         self.locateApple()
         self.bind_all("<Key>", self.onKeyPressed)
@@ -46,7 +39,6 @@ class Board(Canvas):
 
     def loadImages(self):
         '''loads images from the disk'''
-
         try:
             self.idot = Image.open("dot.png")
             self.dot = ImageTk.PhotoImage(self.idot)
@@ -54,16 +46,13 @@ class Board(Canvas):
             self.head = ImageTk.PhotoImage(self.ihead)
             self.iapple = Image.open("apple.png")
             self.apple = ImageTk.PhotoImage(self.iapple)
-
         except IOError as e:
-
             print(e)
             sys.exit(1)
 
 
     def createObjects(self):
         '''creates objects on Canvas'''
-
         self.create_text(30, 10, text="Score: {0}".format(self.score),
                          tag="score", fill="white")
         self.create_image(self.appleX, self.appleY, image=self.apple,
