@@ -5,9 +5,9 @@ from tkinter import Tk, Frame, Canvas, ALL, NW
 
 class Cons:
 
-    BOARD_WIDTH = 900
-    BOARD_HEIGHT = 700
-    DELAY = 100
+    BOARD_WIDTH = 750
+    BOARD_HEIGHT = 550
+    DELAY = 175
     DOT_SIZE = 10
     MAX_RAND_POS = 27
 
