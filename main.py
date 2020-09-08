@@ -58,7 +58,6 @@ class Board(Canvas):
         self.create_image(30, 50, image=self.dot, anchor=NW, tag="dot")
         self.create_image(40, 50, image=self.dot, anchor=NW, tag="dot")
 
-
     def checkAppleCollision(self):
         '''checks if the head of snake collides with apple'''
         apple = self.find_withtag("apple")
@@ -94,7 +93,7 @@ class Board(Canvas):
         for dot in dots:
             for over in overlap:
                 if over == dot:
-                  self.inGame = False
+                    self.inGame = False
         if x1 < 0: self.inGame = False
         if y1 < 0: self.inGame = False
         if x1 > (Cons.BOARD_WIDTH - Cons.DOT_SIZE):
@@ -106,8 +105,8 @@ class Board(Canvas):
         '''places the apple object on Canvas'''
         apple = self.find_withtag("apple")
         self.delete(apple[0])
-        rX = random.randint(30, Cons.MAX_RAND_POS-30)
-        rY = random.randint(30, Cons.MAX_RAND_POS-30)
+        rX = random.randint(0, Cons.MAX_RAND_POS)
+        rY = random.randint(0, Cons.MAX_RAND_POS)
         self.appleX = rX * Cons.DOT_SIZE
         self.appleY = rY * Cons.DOT_SIZE
         self.create_image(self.appleX, self.appleY, anchor=NW,
@@ -163,9 +162,9 @@ class Snake(Frame):
         self.pack()
 
 def main():
-    root = Tk()
+    mainTkWindow = Tk()
     nib = Snake()
-    root.mainloop()
+    mainTkWindow.mainloop()
 
 if __name__ == '__main__':
     main()
