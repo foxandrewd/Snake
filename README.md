@@ -1,6 +1,5 @@
-## proj7
-# Project 7
+# SNAKE!!!!
 
-[![Run on Repl.it](https://repl.it/badge/github/foxandrewd/proj7)](https://repl.it/github/foxandrewd/proj7)
+[![Run on Repl.it](https://repl.it/badge/github/foxandrewd/Snake)](https://repl.it/github/foxandrewd/Snake)
 
-Awesome School!
+Awesome game!
