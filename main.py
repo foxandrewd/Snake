@@ -151,7 +151,7 @@ class Board(Canvas):
     def gameOver(self):
         '''deletes all objects and draws game over message'''
         self.delete(ALL)
-        self.create_text(self.winfo_width() /2, self.winfo_height()/2,
+        self.create_text(self.winfo_width()/2.0, self.winfo_height()/2.0,
             text="Game Over with score {0}".format(self.score), fill="white")
 
 class Snake(Frame):
@@ -162,9 +162,9 @@ class Snake(Frame):
         self.pack()
 
 def main():
-    mainTkWindow = Tk()
+    mainWindow = Tk()
     nib = Snake()
-    mainTkWindow.mainloop()
+    mainWindow.mainloop()
 
 if __name__ == '__main__':
     main()
