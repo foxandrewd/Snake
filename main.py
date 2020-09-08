@@ -8,7 +8,7 @@ class Cons:
     BOARD_HEIGHT = 500
     DELAY = 155
     DOT_SIZE = 11
-    MAX_RAND_POS = 36
+    MAX_RAND_POS = 40
 
 class Board(Canvas):
     def __init__(self):
@@ -166,4 +166,6 @@ def main():
     mainWindow.mainloop()
 
 if __name__ == '__main__':
+    print("hello")
+    x = 5
     main()
