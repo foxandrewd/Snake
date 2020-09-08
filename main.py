@@ -4,9 +4,9 @@ from PIL import Image, ImageTk
 from tkinter import Tk, Frame, Canvas, ALL, NW
 
 class Cons:
-    BOARD_WIDTH = 800
-    BOARD_HEIGHT = 600
-    DELAY = 160
+    BOARD_WIDTH = 750
+    BOARD_HEIGHT = 500
+    DELAY = 155
     DOT_SIZE = 11
     MAX_RAND_POS = 36
 
